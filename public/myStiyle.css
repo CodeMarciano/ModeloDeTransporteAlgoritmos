@@ -1,0 +1,9 @@
+.static {
+    position: static;
+    /*border: 2px solid #78909c;*/
+    height: auto;
+    width: max-content;
+    overflow-x: auto;
+    /*text-align: unset;*/
+    /*display: inline;*/
+}
