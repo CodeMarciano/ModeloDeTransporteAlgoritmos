@@ -70,19 +70,32 @@ class EsquinaNoroeste{
 
             if (arrayDemandaCopy[indexDemanda] < arrayOfertaCopy[indexOferta]) {
 
-                this.ponerNumeroIndiceMatrizCostos(indexOferta, indexDemanda, arrayDemandaCopy[indexDemanda]);
+                if (arrayDemandaCopy[indexDemanda] === 0) {
+                    this.ponerNumeroIndiceMatrizCostos(indexOferta, indexDemanda, arrayOfertaCopy[indexOferta]);
+                    arrayOfertaCopy[indexOferta] = 0;
 
-                let restaResultado = arrayOfertaCopy[indexOferta] - arrayDemandaCopy[indexDemanda];
-                arrayOfertaCopy[indexOferta] = restaResultado;
-
-                indexDemanda++;
+                    indexDemanda++;
+                } else {
+                    this.ponerNumeroIndiceMatrizCostos(indexOferta, indexDemanda, arrayDemandaCopy[indexDemanda]);
+                    let restaResultado = arrayOfertaCopy[indexOferta] - arrayDemandaCopy[indexDemanda];
+                    arrayOfertaCopy[indexOferta] = restaResultado;
+                    indexDemanda++;
+                }
 
             } else if (arrayDemandaCopy[indexDemanda] > arrayOfertaCopy[indexOferta]) {
-                this.ponerNumeroIndiceMatrizCostos(indexOferta, indexDemanda, arrayOfertaCopy[indexOferta]);
 
-                let restaResultado = arrayDemandaCopy[indexDemanda] - arrayOfertaCopy[indexOferta];
-                arrayDemandaCopy[indexDemanda] = restaResultado;
-                indexOferta++;
+                if (arrayOfertaCopy[indexOferta] === 0) {
+                    this.ponerNumeroIndiceMatrizCostos(indexOferta, indexDemanda, arrayDemandaCopy[indexDemanda]);
+                    arrayDemandaCopy[indexDemanda] = 0;
+                    indexOferta++;
+                } else {
+
+                    this.ponerNumeroIndiceMatrizCostos(indexOferta, indexDemanda, arrayOfertaCopy[indexOferta]);
+                    let restaResultado = arrayDemandaCopy[indexDemanda] - arrayOfertaCopy[indexOferta];
+                    arrayDemandaCopy[indexDemanda] = restaResultado;
+                    indexOferta++;
+                }
+
             } else {
                 this.ponerNumeroIndiceMatrizCostos(indexOferta, indexDemanda, arrayOfertaCopy[indexOferta]);
                 indexDemanda++;
