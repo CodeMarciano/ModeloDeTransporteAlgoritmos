@@ -59,6 +59,10 @@ let formularioTamanioMatriz = document.getElementById('formularioTamanioMatriz')
 let aniadirMatrizCostos = document.getElementById('aniadirMatrizCostos');
 let mensaje = document.getElementById('mensaje');
 let ocultarBoton = document.getElementById('ocultarBotonCalcular');
+
+let removerResultadoFlujoMatriz = document.getElementById('mostrarResultado');
+
+let mostrarMensajeResultadoMatrizFlujo = document.getElementById('mensajeResultado');
 // formularioTamanioMatriz.removeAttribute()
 
 function resetContenidoInput(items){
@@ -89,6 +93,8 @@ formularioTamanioMatriz.addEventListener('submit', function (e) {
 
         } else {
             // Dibjando Matriz de costos
+            removerResultadoFlujoMatriz.innerHTML = '';
+            mostrarMensajeResultadoMatrizFlujo.setAttribute('hidden', "");
 
             alertify.success("Exito :D");
             mensaje.removeAttribute('hidden');
@@ -97,7 +103,6 @@ formularioTamanioMatriz.addEventListener('submit', function (e) {
 
             let objetoDibujarMatrizCostos = new DibujarMatriz(numberOrigen, numberDestino);
             objetoDibujarMatrizCostos.comenzarDibujarMatriz(aniadirMatrizCostos);
-
         }
 
     } else {

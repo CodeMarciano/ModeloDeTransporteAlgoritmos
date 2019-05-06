@@ -8,6 +8,7 @@ class EsquinaNoroeste{
         this.columnaNormal = columnaAdicional - 1;
 
         this.arrayACalcularCostos = [];
+        this.arrayCostosForzarGuardarDatos = [];
 
         this.arrayOferta = [];
         this.arrayDemanda = [];
@@ -16,6 +17,15 @@ class EsquinaNoroeste{
         this.sumaOferta = 0;
 
         this.matrizFlujo = [];
+
+        this.totalVariables = [];
+        this.total = 0;
+
+        this.arrayParaFicticio = [];
+    }
+
+    getArrayCostosForzarGuardarDatos(){
+        return this.arrayCostosForzarGuardarDatos;
     }
 
     getArrayCalcularCostos(){
@@ -24,6 +34,22 @@ class EsquinaNoroeste{
 
     getMatrizFlujo(){
         return this.matrizFlujo;
+    }
+
+    getTotalVariables(){
+        return this.totalVariables;
+    }
+
+    getTotal(){
+        return this.total;
+    }
+
+    getArrayOferta(){
+        return this.arrayOferta;
+    }
+
+    getArrayDemanda(){
+        return this.arrayDemanda;
     }
 
     crearArrayFlujo(){
@@ -107,6 +133,12 @@ class EsquinaNoroeste{
     }
 
     ponerNumeroIndiceMatrizCostos(indexOferta, indexDemanda, numeroAPoner){
+        let resultadoMulti = numeroAPoner * this.arrayCostosForzarGuardarDatos[indexOferta][indexDemanda];
+        this.total += resultadoMulti;
+
+        let concatVariablesTotal = `X(${indexOferta},${indexDemanda}) = ${numeroAPoner}`;
+        this.totalVariables.push(concatVariablesTotal);
+
         this.matrizFlujo[indexOferta][indexDemanda] = numeroAPoner;
     }
 
@@ -128,9 +160,46 @@ class EsquinaNoroeste{
         return false;
     }
 
+    obtenerArrayConDatosFicticios(){
+        this.copyArrayMultidimensional(this.arrayParaFicticio, this.arrayCostosForzarGuardarDatos);
+
+        if (this.sumaOferta > this.sumaDemanda) {
+            let diferneciaSumaAniadir = this.sumaOferta - this.sumaDemanda;
+            this.arrayParaFicticio[this.filaNormal].splice(this.columnaNormal, 0, diferneciaSumaAniadir);
+
+            for (let i = 0; i < this.filaNormal; i++) {
+                this.arrayParaFicticio[i].splice(this.columnaNormal, 0, 0);
+            }
+            this.columnaNormal += 1;
+        } else {
+            let diferneciaSumaAniadir = this.sumaDemanda - this.sumaOferta;
+
+            let arrayCeroParaFicticio = [];
+            for (let i = 0; i < this.columnaNormal; i++) {
+                arrayCeroParaFicticio.push(0);
+            }
+            arrayCeroParaFicticio.push(diferneciaSumaAniadir);
+            this.arrayParaFicticio.splice(this.filaNormal, 0, arrayCeroParaFicticio.slice());
+            this.filaNormal += 1;
+        }
+
+        this.arrayACalcularCostos = [];
+        this.copyArrayMultidimensional(this.arrayACalcularCostos, this.arrayParaFicticio);
+
+
+        return this.arrayParaFicticio;
+    }
+
+    flusOfertaDemandaVariabes(){
+        this.arrayOferta = [];
+        this.arrayDemanda = [];
+    }
+
     apartarArrayDatosOfertaDemandaAparte(){
         let indexStaticoFilaDemanda = this.filaNormal;
         let indexStaticoColumnaOferta = this.columnaNormal;
+
+        console.log(indexStaticoFilaDemanda, indexStaticoColumnaOferta);
 
         for (let j = 0; j < this.columnaNormal; j++) {
             this.arrayDemanda.push(this.arrayACalcularCostos[indexStaticoFilaDemanda][j]);
@@ -139,6 +208,9 @@ class EsquinaNoroeste{
         for (let i = 0; i < this.filaNormal; i++) {
             this.arrayOferta.push(this.arrayACalcularCostos[i][indexStaticoColumnaOferta]);
         }
+        console.log("DentroArrayFunctionApartar");
+        console.log(this.arrayDemanda);
+        console.log(this.arrayOferta);
 
         // console.log(this.arrayOferta);
         // console.log(this.arrayDemanda);
@@ -147,17 +219,30 @@ class EsquinaNoroeste{
 
     guardarArrayParaCalcular(nuevoArrayACalcular){
 
-        this.arrayACalcularCostos = nuevoArrayACalcular.slice();
+        // this.arrayACalcularCostos = nuevoArrayACalcular.slice();
+        this.copyArrayMultidimensional(this.arrayACalcularCostos, nuevoArrayACalcular);
+        this.copyArrayMultidimensional(this.arrayCostosForzarGuardarDatos, nuevoArrayACalcular);
     }
 
     mostrarArrayFlujo(){
         return this.arrayACalcularCostos;
     }
+
+
+    copyArrayMultidimensional(arrayNuevo, arrayACopiar) {
+
+        for (let elems of arrayACopiar) {
+            arrayNuevo.push(elems.slice());
+        }
+    }
+
+
 }
 
 
 let frmCalcularFlujoMatriz = document.getElementById('calcularMatrizFlujo');
 let aniadidoCostos = document.getElementById('aniadirMatrizCostos');
+
 
 function extraerDatosInputsDeLaVistaArray(itemsTd) {
 
@@ -188,7 +273,6 @@ frmCalcularFlujoMatriz.addEventListener('submit', function (e) {
 
     objetoEsquinaNoroeste.guardarArrayParaCalcular(extraerDatosInputsDeLaVistaArray(itemsTd));
 
-    // console.log(objetoEsquinaNoroeste.mostrarArrayFlujo());
     objetoEsquinaNoroeste.apartarArrayDatosOfertaDemandaAparte();
 
     let esIgualSumaOfertaDemanda = objetoEsquinaNoroeste.esSumaIguaOfertaDemanda();
@@ -202,12 +286,53 @@ frmCalcularFlujoMatriz.addEventListener('submit', function (e) {
 
         objetoEsquinaNoroeste.resolverAlgoritmoEsquinaNoroeste();
 
-        let auxTempResultado = objetoEsquinaNoroeste.getMatrizFlujo().slice();
+        // No funciona asi en los arrays Multidimensioanl
+        let auxTempResultado = objetoEsquinaNoroeste.getMatrizFlujo();
 
+        // console.log("Total " + objetoEsquinaNoroeste.getTotal());
+        // console.log(objetoEsquinaNoroeste.getTotalVariables());
+        //
         console.log(auxTempResultado);
+        console.log(objetoEsquinaNoroeste.getArrayCostosForzarGuardarDatos());
 
     } else {
-        console.log("No son iguales");
+        alertify.confirm('OFERTA NO IGUALA A LA DEMANDA :V', '¿Quiere añadir ficticios Automaticamente?', function () {
+                alertify.success('Ok');
+
+                let capturarArrayFicticio = objetoEsquinaNoroeste.obtenerArrayConDatosFicticios().slice();
+                console.log("Datos bASE FICTICIO");
+
+                console.log(objetoEsquinaNoroeste.getArrayCalcularCostos());
+                console.log(capturarArrayFicticio);
+
+                console.log(objetoEsquinaNoroeste.getArrayOferta());
+                console.log(objetoEsquinaNoroeste.getArrayDemanda());
+
+                objetoEsquinaNoroeste.flusOfertaDemandaVariabes();
+                objetoEsquinaNoroeste.apartarArrayDatosOfertaDemandaAparte();
+
+
+                console.log(objetoEsquinaNoroeste.getArrayOferta());
+                console.log(objetoEsquinaNoroeste.getArrayDemanda());
+
+
+                objetoEsquinaNoroeste.limpiarMatrizCostosParaAlistarMatrizDeFlujos(capturarArrayFicticio);
+
+                objetoEsquinaNoroeste.resolverAlgoritmoEsquinaNoroeste();
+                //
+                let auxTempResultado = objetoEsquinaNoroeste.getMatrizFlujo().slice();
+
+                console.log("Resultado");
+                console.log(auxTempResultado);
+
+                //
+                // console.log(objetoEsquinaNoroeste.getArrayCostosForzarGuardarDatos());
+
+            }
+            , function () {
+                alertify.error('Cancel')
+            });
+
     }
 
 });
