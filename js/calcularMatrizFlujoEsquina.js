@@ -136,7 +136,7 @@ class EsquinaNoroeste{
         let resultadoMulti = numeroAPoner * this.arrayCostosForzarGuardarDatos[indexOferta][indexDemanda];
         this.total += resultadoMulti;
 
-        let concatVariablesTotal = `X(${indexOferta},${indexDemanda}) = ${numeroAPoner}`;
+        let concatVariablesTotal = `X(${indexOferta + 1},${indexDemanda + 1}) = ${numeroAPoner}`;
         this.totalVariables.push(concatVariablesTotal);
 
         this.matrizFlujo[indexOferta][indexDemanda] = numeroAPoner;
@@ -158,6 +158,15 @@ class EsquinaNoroeste{
         // console.log("Suma Oferta = " + this.sumaOferta);
         // console.log("Suma Demanda = " + this.sumaDemanda);
         return false;
+    }
+
+    mensajeDinamicoDeCualEsElMayorOfertaDemanda(){
+
+        if (this.sumaOferta > this.sumaDemanda) {
+            return "LA OFERTA ES MAYOR QUE LA DEMANDA";
+        } else {
+            return "LA DEMANDA ES MAYOR QUE LA OFERTA";
+        }
     }
 
     obtenerArrayConDatosFicticios(){
@@ -208,10 +217,6 @@ class EsquinaNoroeste{
         for (let i = 0; i < this.filaNormal; i++) {
             this.arrayOferta.push(this.arrayACalcularCostos[i][indexStaticoColumnaOferta]);
         }
-        console.log("DentroArrayFunctionApartar");
-        console.log(this.arrayDemanda);
-        console.log(this.arrayOferta);
-
         // console.log(this.arrayOferta);
         // console.log(this.arrayDemanda);
 
@@ -278,7 +283,6 @@ frmCalcularFlujoMatriz.addEventListener('submit', function (e) {
     let esIgualSumaOfertaDemanda = objetoEsquinaNoroeste.esSumaIguaOfertaDemanda();
 
     if (esIgualSumaOfertaDemanda) {
-        // console.log("Son Iguales :)");
         alertify.success("Demanda y Oferta Iguales Resolviendo :)");
         let arrayCostosSinFicticio = objetoEsquinaNoroeste.getArrayCalcularCostos().slice();
 
@@ -286,17 +290,15 @@ frmCalcularFlujoMatriz.addEventListener('submit', function (e) {
 
         objetoEsquinaNoroeste.resolverAlgoritmoEsquinaNoroeste();
 
-        // No funciona asi en los arrays Multidimensioanl
         let auxTempResultado = objetoEsquinaNoroeste.getMatrizFlujo();
 
-        // console.log("Total " + objetoEsquinaNoroeste.getTotal());
-        // console.log(objetoEsquinaNoroeste.getTotalVariables());
-        //
         console.log(auxTempResultado);
         console.log(objetoEsquinaNoroeste.getArrayCostosForzarGuardarDatos());
 
     } else {
-        alertify.confirm('OFERTA NO IGUALA A LA DEMANDA :V', '¿Quiere añadir ficticios Automaticamente?', function () {
+        let mensajeModalDinamico = objetoEsquinaNoroeste.mensajeDinamicoDeCualEsElMayorOfertaDemanda();
+
+        alertify.confirm('NO ESTAN BALENCEADOS ' + mensajeModalDinamico +' :V', '¿Quiere añadir ficticios Automaticamente?', function () {
                 alertify.success('Ok');
 
                 let capturarArrayFicticio = objetoEsquinaNoroeste.obtenerArrayConDatosFicticios().slice();
@@ -324,13 +326,13 @@ frmCalcularFlujoMatriz.addEventListener('submit', function (e) {
 
                 console.log("Resultado");
                 console.log(auxTempResultado);
+                console.log("Total Total " + objetoEsquinaNoroeste.getTotal());
+                console.log("Variables " + objetoEsquinaNoroeste.getTotalVariables());
 
-                //
-                // console.log(objetoEsquinaNoroeste.getArrayCostosForzarGuardarDatos());
 
             }
             , function () {
-                alertify.error('Cancel')
+                alertify.error('Cancelado');
             });
 
     }
