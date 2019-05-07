@@ -1,6 +1,7 @@
 class EsquinaNoroeste{
 
     constructor(filaAdicional, columnaAdicional){
+        // No tocar tanto la fila adicional porque esta dibujando Matriz Flujo
         this.filaAdicional = filaAdicional;
         this.columnaAdicional = columnaAdicional;
 
@@ -136,7 +137,9 @@ class EsquinaNoroeste{
         let resultadoMulti = numeroAPoner * this.arrayCostosForzarGuardarDatos[indexOferta][indexDemanda];
         this.total += resultadoMulti;
 
-        let concatVariablesTotal = `X(${indexOferta + 1},${indexDemanda + 1}) = ${numeroAPoner}`;
+        let cadenaCostosIndex = this.arrayCostosForzarGuardarDatos[indexOferta][indexDemanda];
+
+        let concatVariablesTotal = `[ X(${indexOferta + 1},${indexDemanda + 1}) = ${numeroAPoner} ]  [Costos: ${cadenaCostosIndex}]`;
         this.totalVariables.push(concatVariablesTotal);
 
         this.matrizFlujo[indexOferta][indexDemanda] = numeroAPoner;
@@ -180,6 +183,7 @@ class EsquinaNoroeste{
                 this.arrayParaFicticio[i].splice(this.columnaNormal, 0, 0);
             }
             this.columnaNormal += 1;
+            this.columnaAdicional += 1;
         } else {
             let diferneciaSumaAniadir = this.sumaDemanda - this.sumaOferta;
 
@@ -190,11 +194,14 @@ class EsquinaNoroeste{
             arrayCeroParaFicticio.push(diferneciaSumaAniadir);
             this.arrayParaFicticio.splice(this.filaNormal, 0, arrayCeroParaFicticio.slice());
             this.filaNormal += 1;
+            this.filaAdicional += 1;
         }
 
         this.arrayACalcularCostos = [];
-        this.copyArrayMultidimensional(this.arrayACalcularCostos, this.arrayParaFicticio);
+        this.arrayCostosForzarGuardarDatos = [];
 
+        this.copyArrayMultidimensional(this.arrayACalcularCostos, this.arrayParaFicticio);
+        this.copyArrayMultidimensional(this.arrayCostosForzarGuardarDatos, this.arrayParaFicticio);
 
         return this.arrayParaFicticio;
     }
@@ -241,12 +248,117 @@ class EsquinaNoroeste{
         }
     }
 
+    comenzarDibujarMatriz(elemento) {
+        let cadenaConcat = "<tr>";
+        console.log(this.filaAdicional);
+        console.log(this.columnaAdicional);
+
+        for (let i = 0; i < this.filaAdicional; i++) {
+            for (let j = 0; j < this.columnaAdicional; j++) {
+
+                if (j === this.columnaAdicional-1) {
+                    if (i === this.filaAdicional-1) {
+                        cadenaConcat +="";
+                    } else {
+                        cadenaConcat += `
+                            <td><input type='text' style='width: 50px;' class='green accent-1' value='${this.matrizFlujo[i][j]}' disabled required></td>
+                        `;
+                    }
+                } else {
+
+                    if (i === this.filaAdicional -1) {
+                        cadenaConcat += `
+                            <td><input type='text' style='width: 50px;' class='green accent-1' value='${this.matrizFlujo[i][j]}' disabled required></td>
+                        `;
+                    } else {
+
+                        cadenaConcat += `
+                                <td><input type='text' style='width: 50px;' value='${this.matrizFlujo[i][j]}' disabled required></td>
+                        `;
+
+                    }
+
+                }
+            }
+            cadenaConcat+="</tr>";
+            if ( i === this.filaAdicional -1) {
+                cadenaConcat +="";
+            } else {
+                cadenaConcat +="<tr>";
+            }
+        }
+        elemento.innerHTML = cadenaConcat;
+    }
+
+    comenzarDibujarMatrizConFicticio(elemento) {
+        let cadenaConcat = "<tr>";
+        console.log(this.filaAdicional);
+        console.log(this.columnaAdicional);
+
+        for (let i = 0; i < this.filaAdicional; i++) {
+            for (let j = 0; j < this.columnaAdicional; j++) {
+
+                if (j === this.columnaAdicional-1) {
+                    if (i === this.filaAdicional-1) {
+                        cadenaConcat +="";
+                    } else {
+                        cadenaConcat += `
+                            <td><input type='text' style='width: 50px;' class='green accent-1' value='${this.arrayACalcularCostos[i][j]}' disabled required></td>
+                        `;
+                    }
+                } else {
+
+                    if (i === this.filaAdicional -1) {
+                        cadenaConcat += `
+                            <td><input type='text' style='width: 50px;' class='green accent-1' value='${this.arrayACalcularCostos[i][j]}' disabled required></td>
+                        `;
+                    } else {
+
+                        cadenaConcat += `
+                                <td><input type='text' style='width: 50px;' value='${this.arrayACalcularCostos[i][j]}' disabled required></td>
+                        `;
+
+                    }
+
+                }
+            }
+            cadenaConcat+="</tr>";
+            if ( i === this.filaAdicional -1) {
+                cadenaConcat +="";
+            } else {
+                cadenaConcat +="<tr>";
+            }
+        }
+        elemento.innerHTML = cadenaConcat;
+    }
+
+    comenzarDibujarTotalesResultadosVariables(elemento) {
+        let cadenaConcat = "";
+        for (let variables of this.totalVariables) {
+            cadenaConcat += `<tr>
+                                <td>${variables}</td>
+                            </tr>`;
+        }
+        cadenaConcat += `<tr><td>Total = ${this.total}</td></tr>`;
+        elemento.innerHTML = cadenaConcat;
+    }
 
 }
 
 
 let frmCalcularFlujoMatriz = document.getElementById('calcularMatrizFlujo');
 let aniadidoCostos = document.getElementById('aniadirMatrizCostos');
+
+// Pintar ID PARA NO FICTICIOS MATRIZ
+let mostrarResultadoFlujo = document.getElementById('mostrarResultado');
+let mensajeResultadoFlujo = document.getElementById('mensajeResultado');
+
+//Pintar SI FICTICIOS ID
+let mostrarMatrizCostoFicticio = document.getElementById('mostrarMatrizCostoConficticio');
+let mensajeCostoFicticio = document.getElementById('mensajeMatrizCostoFicticio');
+
+// Pintar Resultados ID
+let resultadoVariablesTotal = document.getElementById('mostrarTotal');
 
 
 function extraerDatosInputsDeLaVistaArray(itemsTd) {
@@ -256,7 +368,7 @@ function extraerDatosInputsDeLaVistaArray(itemsTd) {
     let arrayAux = [];
     for (let elements of itemsTd) {
         for (let el of elements) {
-            arrayAux.push(parseInt(el.querySelector('input').value, 0));
+            arrayAux.push(parseFloat(el.querySelector('input').value, 0));
         }
         arrayParaMatrizEsquinaNoroeste.push(arrayAux);
         arrayAux = [];
@@ -284,6 +396,11 @@ frmCalcularFlujoMatriz.addEventListener('submit', function (e) {
 
     if (esIgualSumaOfertaDemanda) {
         alertify.success("Demanda y Oferta Iguales Resolviendo :)");
+
+        mensajeCostoFicticio.setAttribute('hidden', '');
+        mostrarMatrizCostoFicticio.innerHTML = '';
+        resultadoVariablesTotal.innerHTML = '';
+
         let arrayCostosSinFicticio = objetoEsquinaNoroeste.getArrayCalcularCostos().slice();
 
         objetoEsquinaNoroeste.limpiarMatrizCostosParaAlistarMatrizDeFlujos(arrayCostosSinFicticio);
@@ -291,6 +408,11 @@ frmCalcularFlujoMatriz.addEventListener('submit', function (e) {
         objetoEsquinaNoroeste.resolverAlgoritmoEsquinaNoroeste();
 
         let auxTempResultado = objetoEsquinaNoroeste.getMatrizFlujo();
+
+        objetoEsquinaNoroeste.comenzarDibujarMatriz(mostrarResultadoFlujo);
+        mensajeResultadoFlujo.removeAttribute('hidden');
+
+        objetoEsquinaNoroeste.comenzarDibujarTotalesResultadosVariables(resultadoVariablesTotal);
 
         console.log(auxTempResultado);
         console.log(objetoEsquinaNoroeste.getArrayCostosForzarGuardarDatos());
@@ -321,14 +443,23 @@ frmCalcularFlujoMatriz.addEventListener('submit', function (e) {
                 objetoEsquinaNoroeste.limpiarMatrizCostosParaAlistarMatrizDeFlujos(capturarArrayFicticio);
 
                 objetoEsquinaNoroeste.resolverAlgoritmoEsquinaNoroeste();
-                //
+
                 let auxTempResultado = objetoEsquinaNoroeste.getMatrizFlujo().slice();
+
+                objetoEsquinaNoroeste.comenzarDibujarMatrizConFicticio(mostrarMatrizCostoFicticio);
+                mensajeCostoFicticio.removeAttribute('hidden');
+
+                objetoEsquinaNoroeste.comenzarDibujarMatriz(mostrarResultadoFlujo);
+                mensajeResultadoFlujo.removeAttribute('hidden');
+
+                objetoEsquinaNoroeste.comenzarDibujarTotalesResultadosVariables(resultadoVariablesTotal);
 
                 console.log("Resultado");
                 console.log(auxTempResultado);
                 console.log("Total Total " + objetoEsquinaNoroeste.getTotal());
                 console.log("Variables " + objetoEsquinaNoroeste.getTotalVariables());
-
+                console.log("Forzado====")
+                console.log(objetoEsquinaNoroeste.getArrayCostosForzarGuardarDatos());
 
             }
             , function () {

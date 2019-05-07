@@ -57,13 +57,22 @@ class DibujarMatriz {
 
 let formularioTamanioMatriz = document.getElementById('formularioTamanioMatriz');
 let aniadirMatrizCostos = document.getElementById('aniadirMatrizCostos');
+
 let mensaje = document.getElementById('mensaje');
 let ocultarBoton = document.getElementById('ocultarBotonCalcular');
+
 
 let removerResultadoFlujoMatriz = document.getElementById('mostrarResultado');
 
 let mostrarMensajeResultadoMatrizFlujo = document.getElementById('mensajeResultado');
+
 // formularioTamanioMatriz.removeAttribute()
+
+let auxShowFiciticio = document.getElementById('mostrarMatrizCostoConficticio');
+let auxMessageFicticio = document.getElementById('mensajeMatrizCostoFicticio');
+let auxResulVarTotal = document.getElementById('mostrarTotal');
+// let resultadoVariablesTotal = document.getElementById('mostrarTotal');
+
 
 function resetContenidoInput(items){
     for (el of items) {
@@ -97,9 +106,14 @@ formularioTamanioMatriz.addEventListener('submit', function (e) {
             mostrarMensajeResultadoMatrizFlujo.setAttribute('hidden', "");
 
             alertify.success("Exito :D");
+
             mensaje.removeAttribute('hidden');
             ocultarBoton.setAttribute('class', 'btn green');
             ocultarBoton.removeAttribute('hidden');
+
+            auxMessageFicticio.setAttribute('hidden', '');
+            auxShowFiciticio.innerHTML = '';
+            auxResulVarTotal.innerHTML = '';
 
             let objetoDibujarMatrizCostos = new DibujarMatriz(numberOrigen, numberDestino);
             objetoDibujarMatrizCostos.comenzarDibujarMatriz(aniadirMatrizCostos);
