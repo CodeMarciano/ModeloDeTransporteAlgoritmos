@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Costo Minimo</title>
+    <link rel="stylesheet" href="public/materialize/css/materialize-icons.css">
+    <link rel="stylesheet" href="public/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="public/alertifyjs/css/alertify.min.css">
+    <link rel="stylesheet" href="public/alertifyjs/css/themes/default.min.css">
+
+    <link rel="stylesheet" href="public/myStiyle.css">
+
+</head>
+<body>
+
+<!--PIDIENDO ORIGENES X DESTINOS-->
+<div class="section container">
+    <div class="row">
+
+        <form id="formularioTamanioMatriz" class="col s12">
+            <div class="row card-panel">
+                <h4 class="center">Costo Minimo</h4>
+                <div class="input-field col s4">
+                    <input type="text" name="origen" id="origenes" placeholder="Origenes" class="validate" maxlength="2" required>
+                </div>
+
+                <div class="col s4">
+                    <p class="center">X</p>
+                </div>
+
+                <div class="input-field col s4">
+                    <input type="text" name="destino" id="destinos" placeholder="Destinos" class="validate" maxlength="2" required>
+                </div>
+                <button class=" btn green" type="submit">Aceptar</button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+<!--DIGITANDO LA MATRIZ DE COSTOS-->
+<div class="section container">
+    <div>
+        <form id="calcularMatrizFlujo">
+            <table class="card-panel" style="width: auto;">
+                <h3 id="mensaje" hidden="">Digite MatrizCostoFlujo de Costos</h3>
+                <thead id="aniadirMatrizCostos">
+
+                </thead>
+            </table>
+            <button id="ocultarBotonCalcular" type="submit" hidden="">Calcular</button>
+        </form>
+
+    </div>
+</div>
+
+
+<!--MOSTRANDO DATOS FICTICIOS-->
+<div class="section container">
+    <div>
+        <table class="card-panel" style="width: auto;">
+            <h3 id="mensajeMatrizCostoFicticio" hidden="">MatrizCostoFlujo de Costos Con Ficticios</h3>
+            <thead id="mostrarMatrizCostoConficticio">
+
+            </thead>
+        </table>
+    </div>
+</div>
+
+<!--MOSTRANDO LA MATRIZ DE FLUJOS-->
+<div class="section container">
+    <div>
+        <table class="card-panel" style="width: auto;">
+            <h3 id="mensajeResultado" hidden="">Resultados</h3>
+            <thead id="mostrarResultado">
+
+            </thead>
+        </table>
+    </div>
+</div>
+
+<!--MOSTRANDO TOTALES DE VARIABLES-->
+<div class="section container">
+    <div>
+        <table class="card-panel" style="width: auto">
+<!--            <h3 id="mensajeMostrarTotal" hidden="">Total</h3>-->
+            <thead id="mostrarTotal">
+
+            </thead>
+        </table>
+    </div>
+</div>
+
+
+<script src="public/materialize/js/materialize.min.js"></script>
+<script src="public/alertifyjs/alertify.min.js"></script>
+
+<script src="js/CostoMinimo/MatrizCostoFlujo.js"></script>
+<script src="js/CostoMinimo/CostoMinimo.js"></script>
+
+<script src="js/CostoMinimo/index.js"></script>
+<script src="js/CostoMinimo/appCostoMinimo.js"></script>
+<!--<script src="js/appEsquinaNoroeste.js"></script>-->
+<!--<script src="js/calcularMatrizFlujoEsquina.js"></script>-->
+</body>
+</html>
