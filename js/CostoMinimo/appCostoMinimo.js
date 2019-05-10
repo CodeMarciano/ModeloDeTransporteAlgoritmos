@@ -1,6 +1,17 @@
 let frmCalcularFlujoMatriz = document.getElementById('calcularMatrizFlujo');
 let aniadidoCostos = document.getElementById('aniadirMatrizCostos');
 
+// Sin ficticios
+let mostrarResultadoFlujo = document.getElementById('mostrarResultado');
+let mensajeResultadoFlujo = document.getElementById('mensajeResultado');
+
+// Con ficticios
+let mostrarMatrizCostoFicticio = document.getElementById('mostrarMatrizCostoConficticio');
+let mensajeCostoFicticio = document.getElementById('mensajeMatrizCostoFicticio');
+
+
+let resultadoVariablesTotal = document.getElementById('mostrarTotal');
+
 function extraerDatosInputsDeLaVistaArray(itemsTd) {
 
     let arrayParaMatrizEsquinaNoroeste = [];
@@ -38,16 +49,34 @@ function calcularResultadoCostoMinimoMostrar(e) {
 
 
     if (esIgualSumaOfertaDemanda) {
-        alertify.success("Exito :)")
+        alertify.success("Exito :)");
+        // let arraySinFicticio = objetoCostoMinimo.getArrayACalcularCostos();
+        objetoCostoMinimo.resolverCostoMinimo();
+
+        let matrizFlujo = objetoCostoMinimo.getMatrizFlujo();
+        objetoCostoMinimo.dibujarMatrizConDatosInput(mostrarResultadoFlujo, matrizFlujo);
+        mensajeResultadoFlujo.removeAttribute('hidden');
+        objetoCostoMinimo.comenzarDibujarTotalesResultadosVariables(resultadoVariablesTotal);
+
     } else {
 
         let mensajeModalDinamico = objetoCostoMinimo.mensajeDinamicoDeCualEsElMayorOfertaDemanda();
 
         alertify.confirm('NO ESTAN BALENCEADOS ' + mensajeModalDinamico + ' :V', '¿Quiere añadir ficticios Automaticamente?', function () {
                 alertify.success('Ok');
-                let arrayConFicticio = objetoCostoMinimo.obtenerArrayConDatosFicticios();
+                objetoCostoMinimo.creandoArrayConDatosFicticiosDerivados();
+                objetoCostoMinimo.resolverCostoMinimo();
 
-                console.log(arrayConFicticio);
+                let matrizFlujo = objetoCostoMinimo.getMatrizFlujo();
+                objetoCostoMinimo.dibujarMatrizConDatosInput(mostrarResultadoFlujo, matrizFlujo);
+
+                let costosTempFicticio = objetoCostoMinimo.getArrayACalcularCostos();
+                objetoCostoMinimo.dibujarMatrizConDatosInput(mostrarMatrizCostoFicticio, costosTempFicticio);
+                mensajeCostoFicticio.removeAttribute('hidden');
+
+                mensajeResultadoFlujo.removeAttribute('hidden');
+                objetoCostoMinimo.comenzarDibujarTotalesResultadosVariables(resultadoVariablesTotal);
+
             }
             , function () {
                 alertify.error('Cancelado');

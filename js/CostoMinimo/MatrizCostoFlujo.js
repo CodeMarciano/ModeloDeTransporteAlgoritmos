@@ -16,6 +16,12 @@ class MatrizCostoFlujo {
         this.sumaDemanda = 0;
 
         this.arrayParaFicticio = [];
+
+        this.matrizFlujo = [];
+
+        this.totalVariables = [];
+        this.total = 0;
+
     }
 
     getTodo(){
@@ -31,6 +37,10 @@ class MatrizCostoFlujo {
         return this.arrayCostosForzarGuardarDatos;
     }
 
+    getMatrizFlujo(){
+        return this.matrizFlujo;
+    }
+
     dibujarMatrizConDatosInput(elemento, arrayADibujar){
         let cadenaConcat = "<tr>";
 
@@ -42,19 +52,19 @@ class MatrizCostoFlujo {
                         cadenaConcat +="";
                     } else {
                         cadenaConcat += `
-                            <td><input type='text' style='width: 50px;' class='green accent-1' value='${arrayADibujar[i][j]}' required></td>
+                            <td><input type='text' style='width: 50px;' class='green accent-1' value='${arrayADibujar[i][j]}' disabled required></td>
                         `;
                     }
                 } else {
 
                     if (i === this.filaAdicional -1) {
                         cadenaConcat += `
-                            <td><input type='text' style='width: 50px;' class='green accent-1' value='${arrayADibujar[i][j]}' required></td>
+                            <td><input type='text' style='width: 50px;' class='green accent-1' value='${arrayADibujar[i][j]}' disabled required></td>
                         `;
                     } else {
 
                         cadenaConcat += `
-                                <td><input type='text' style='width: 50px;' value='${arrayADibujar[i][j]}' required></td>
+                                <td><input type='text' style='width: 50px;' value='${arrayADibujar[i][j]}' disabled required></td>
                         `;
 
                     }
@@ -126,6 +136,8 @@ class MatrizCostoFlujo {
         let indexStaticoFilaDemanda = this.filaNormal;
         let indexStaticoColumnaOferta = this.columnaNormal;
 
+        console.log("Resultado");
+        console.log(indexStaticoFilaDemanda, indexStaticoColumnaOferta);
 
         for (let j = 0; j < this.columnaNormal; j++) {
             this.arrayDemanda.push(this.arrayACacularCostos[indexStaticoFilaDemanda][j]);
@@ -134,6 +146,7 @@ class MatrizCostoFlujo {
         for (let i = 0; i < this.filaNormal; i++) {
             this.arrayOferta.push(this.arrayACacularCostos[i][indexStaticoColumnaOferta]);
         }
+        console.log(this.arrayACacularCostos);
 
     }
 
@@ -168,7 +181,7 @@ class MatrizCostoFlujo {
     }
 
 
-    obtenerArrayConDatosFicticios(){
+    creandoArrayConDatosFicticiosDerivados(){
 
         this.copyArrayMultidimensional(this.arrayParaFicticio, this.arrayCostosForzarGuardarDatos);
 
@@ -194,14 +207,60 @@ class MatrizCostoFlujo {
             this.filaAdicional += 1;
         }
 
-        this.arrayACalcularCostos = [];
+        // this.arrayACalcularCostos;
+        this.arrayACacularCostos = [];
         this.arrayCostosForzarGuardarDatos = [];
 
-        this.copyArrayMultidimensional(this.arrayACalcularCostos, this.arrayParaFicticio);
+
+        this.copyArrayMultidimensional(this.arrayACacularCostos, this.arrayParaFicticio);
         this.copyArrayMultidimensional(this.arrayCostosForzarGuardarDatos, this.arrayParaFicticio);
 
-        return this.arrayParaFicticio;
+        this.flushOfertaDemandaVariabes();
+        this.apartarArrayDatosOfertaDemandaAparte();
     }
 
+    limpiarMatrizCostosParaAlistarMatrizDeFlujos(){
+        let matrizAlimpiarCostosParaFlujo = [];
+        this.copyArrayMultidimensional(matrizAlimpiarCostosParaFlujo, this.arrayACacularCostos);
+
+        for  (let i = 0; i < this.filaNormal; i++) {
+            for (let j = 0; j < this.columnaNormal; j++) {
+                matrizAlimpiarCostosParaFlujo[i][j] = 0;
+            }
+        }
+
+        this.copyArrayMultidimensional(this.matrizFlujo, matrizAlimpiarCostosParaFlujo);
+        // this.matrizFlujo = matrizAlimpiarCostosParaFlujo.slice();
+    }
+
+    calcularResultadoMatrizFlujo(){
+
+    }
+
+    comenzarDibujarTotalesResultadosVariables(elemento) {
+        let cadenaConcat = "";
+        for (let variables of this.totalVariables) {
+            cadenaConcat += `<tr>
+                                <td>${variables}</td>
+                            </tr>`;
+        }
+        cadenaConcat += `<tr><td>Total = ${this.total}</td></tr>`;
+        elemento.innerHTML = cadenaConcat;
+    }
+
+
+    flushOfertaDemandaVariabes(){
+        this.arrayOferta = [];
+        this.arrayDemanda = [];
+    }
+
+    crearMatriz(filas, columnas) {
+        let array = [];
+
+        for (let i = 0; i < filas; i++) {
+            array.push(new Array(columnas).slice());
+        }
+        return array;
+    }
 
 }

@@ -60,8 +60,6 @@ function dibujarMatrizAPedirDatos(e){
             let objetoMatrizCostos = new MatrizCostoFlujo(numberOrigen, numberDestino);
             objetoMatrizCostos.comenzarDibujarMatrizSinDatosInput(aniadirMatrizCostos);
 
-            // let objetoDibujarMatrizCostos = new DibujarMatriz(numberOrigen, numberDestino);
-            // objetoDibujarMatrizCostos.comenzarDibujarMatriz(aniadirMatrizCostos);
         }
 
     } else {
