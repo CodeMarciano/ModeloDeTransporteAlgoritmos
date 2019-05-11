@@ -1,7 +1,7 @@
 class EsquinaNoroeste{
 
     constructor(filaAdicional, columnaAdicional){
-        // No tocar tanto la fila adicional porque esta dibujando Matriz Flujo
+        // No tocar tanto la fila adicional porque esta dibujando MatrizCostoFlujo Flujo
         this.filaAdicional = filaAdicional;
         this.columnaAdicional = columnaAdicional;
 
@@ -173,6 +173,7 @@ class EsquinaNoroeste{
     }
 
     obtenerArrayConDatosFicticios(){
+
         this.copyArrayMultidimensional(this.arrayParaFicticio, this.arrayCostosForzarGuardarDatos);
 
         if (this.sumaOferta > this.sumaDemanda) {

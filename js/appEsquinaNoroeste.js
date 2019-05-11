@@ -101,7 +101,7 @@ formularioTamanioMatriz.addEventListener('submit', function (e) {
             alertify.error("Inserta numeros validos entre ----[ 1 a 20 ] ");
 
         } else {
-            // Dibjando Matriz de costos
+            // Dibjando MatrizCostoFlujo de costos
             removerResultadoFlujoMatriz.innerHTML = '';
             mostrarMensajeResultadoMatrizFlujo.setAttribute('hidden', "");
 

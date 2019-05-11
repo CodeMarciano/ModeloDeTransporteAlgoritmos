@@ -9,8 +9,9 @@ formularioEscojerModelo.addEventListener('submit', function (e) {
     if (datoRadioButton === "1") {
         window.location.href = "esquinanoroeste.html";
     } else if (datoRadioButton === "2") {
-
+        window.location.href = "aproximacionvoguel.html"
     } else if (datoRadioButton === "3") {
+        window.location.href = "minimocosto.html";
 
     }
 

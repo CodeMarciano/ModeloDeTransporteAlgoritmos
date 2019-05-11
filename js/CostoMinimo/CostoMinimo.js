@@ -58,6 +58,7 @@ class CostoMinimo extends MatrizCostoFlujo{
             let cadenaCostosIndex = this.arrayCostosForzarGuardarDatos[filaEncontrada][columnaEncontrada];
             let concatVariablesTotal = `[ X(${filaEncontrada + 1},${columnaEncontrada + 1}) = ${this.matrizFlujo[filaEncontrada][columnaEncontrada]} ]  [Costos: ${cadenaCostosIndex}]`;
             this.totalVariables.push(concatVariablesTotal);
+
         }
 
         console.log("====Despues============");
