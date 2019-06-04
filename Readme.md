@@ -1,1 +1,3 @@
-Esto es un readem
+Algoritmo Esquinanoroeste
+Algoritmo CostoMinimo
+Algoritmo Voguel
