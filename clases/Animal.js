@@ -1,0 +1,10 @@
+class Animal {
+    constructor(){
+
+    }
+
+    saludar(){
+
+    }
+
+}

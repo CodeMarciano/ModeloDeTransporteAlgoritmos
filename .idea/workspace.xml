@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/js/calcularMatrizFlujoEsquina.js" line="437" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="573e2388-a25d-4dd6-9247-50f4bcadfe9e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/aproximacionvoguel.html" beforeDir="false" afterPath="$PROJECT_DIR$/aproximacionvoguel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/esquinanoroeste.html" beforeDir="false" afterPath="$PROJECT_DIR$/esquinanoroeste.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/CostoMinimo/CostoMinimo.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/CostoMinimo/CostoMinimo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/CostoMinimo/MatrizCostoFlujo.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/CostoMinimo/MatrizCostoFlujo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/CostoMinimo/appCostoMinimo.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/CostoMinimo/appCostoMinimo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/CostoMinimo/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/CostoMinimo/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Voguel/AproximacionVoguel.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Voguel/AproximacionVoguel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Voguel/appAproximacionVoguel.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Voguel/appAproximacionVoguel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Voguel/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Voguel/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/appEsquinaNoroeste.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/appEsquinaNoroeste.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/calcularMatrizFlujoEsquina.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/calcularMatrizFlujoEsquina.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minimocosto.html" beforeDir="false" afterPath="$PROJECT_DIR$/minimocosto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/alertifyjs/alertify.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/alertifyjs/alertify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/alertifyjs/css/alertify.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/alertifyjs/css/alertify.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/alertifyjs/css/alertify.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/alertifyjs/css/alertify.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/alertifyjs/css/alertify.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/alertifyjs/css/alertify.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/alertifyjs/css/alertify.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/alertifyjs/css/alertify.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/alertifyjs/css/themes/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/alertifyjs/css/themes/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/alertifyjs/css/themes/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/alertifyjs/css/themes/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/alertifyjs/css/themes/bootstrap.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/alertifyjs/css/themes/bootstrap.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/alertifyjs/css/themes/bootstrap.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/alertifyjs/css/themes/bootstrap.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/alertifyjs/css/themes/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/alertifyjs/css/themes/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/alertifyjs/css/themes/default.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/alertifyjs/css/themes/default.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/alertifyjs/css/themes/default.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/alertifyjs/css/themes/default.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/alertifyjs/css/themes/default.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/alertifyjs/css/themes/default.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/alertifyjs/css/themes/semantic.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/alertifyjs/css/themes/semantic.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/alertifyjs/css/themes/semantic.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/alertifyjs/css/themes/semantic.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/alertifyjs/css/themes/semantic.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/alertifyjs/css/themes/semantic.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/alertifyjs/css/themes/semantic.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/alertifyjs/css/themes/semantic.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/materialize/css/materialize-icons.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/materialize/css/materialize-icons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/materialize/css/materialize.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/materialize/css/materialize.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/materialize/js/materialize.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/materialize/js/materialize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/materialize/js/materialize.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/materialize/js/materialize.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/myStiyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/myStiyle.css" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/calcularMatrizFlujoEsquina.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6000">
+              <caret line="400" column="8" selection-start-line="400" selection-start-column="8" selection-end-line="403" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/app.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/CostoMinimo/appCostoMinimo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/CostoMinimo/CostoMinimo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/CostoMinimo/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="501">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/Voguel/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="930">
+              <caret line="62" selection-start-line="62" selection-end-line="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/Voguel/AproximacionVoguel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5550">
+              <caret line="370" selection-start-line="370" selection-end-line="370" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/minimocosto.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1200">
+              <caret line="80" selection-start-line="79" selection-end-line="80" />
+              <folding>
+                <element signature="n#style#0;n#table#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/Voguel/appAproximacionVoguel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/CostoMinimo/MatrizCostoFlujo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Pug File" />
+        <option value="AMD JavaScript File" />
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>s</find>
+      <find>filaA</find>
+      <find>filaAdicional</find>
+      <find>aniadidoCos</find>
+      <find>matrizFlujo</find>
+      <find>arrayACalcular</find>
+      <find>arrayAca</find>
+      <find>total</find>
+      <find>totalVariables</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Hola.pug" />
+        <option value="$PROJECT_DIR$/js/hola.js" />
+        <option value="$PROJECT_DIR$/js/perro.js" />
+        <option value="$PROJECT_DIR$/rora.js" />
+        <option value="$PROJECT_DIR$/index2.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/gato.html" />
+        <option value="$PROJECT_DIR$/js/DibujarMatriz.js" />
+        <option value="$PROJECT_DIR$/js/prueba1.js" />
+        <option value="$PROJECT_DIR$/js/prueba2.js" />
+        <option value="$PROJECT_DIR$/public/myStiyle.css" />
+        <option value="$PROJECT_DIR$/hola.html" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/esquinanoroeste.html" />
+        <option value="$PROJECT_DIR$/js/CostoMinimo/DibujoG.js" />
+        <option value="$PROJECT_DIR$/clases/Perro.js" />
+        <option value="$PROJECT_DIR$/clases/Animal.js" />
+        <option value="$PROJECT_DIR$/js/CostoMinimo/DiibujarMatriz.js" />
+        <option value="$PROJECT_DIR$/js/CostoMinimo/Matriz.js" />
+        <option value="$PROJECT_DIR$/js/appEsquinaNoroeste.js" />
+        <option value="$PROJECT_DIR$/js/Voguel/AlgoritmoVoguel.js" />
+        <option value="$PROJECT_DIR$/public/aproximacionvoguel.js" />
+        <option value="$PROJECT_DIR$/aproximacionvoguel.js" />
+        <option value="$PROJECT_DIR$/js/app.js" />
+        <option value="$PROJECT_DIR$/js/CostoMinimo/index.js" />
+        <option value="$PROJECT_DIR$/js/calcularMatrizFlujoEsquina.js" />
+        <option value="$PROJECT_DIR$/minimocosto.html" />
+        <option value="$PROJECT_DIR$/js/CostoMinimo/CostoMinimo.js" />
+        <option value="$PROJECT_DIR$/js/CostoMinimo/appCostoMinimo.js" />
+        <option value="$PROJECT_DIR$/aproximacionvoguel.html" />
+        <option value="$PROJECT_DIR$/js/Voguel/index.js" />
+        <option value="$PROJECT_DIR$/js/Voguel/appAproximacionVoguel.js" />
+        <option value="$PROJECT_DIR$/js/Voguel/AproximacionVoguel.js" />
+        <option value="$PROJECT_DIR$/js/CostoMinimo/MatrizCostoFlujo.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="12" />
+    <option name="y" value="25" />
+    <option name="width" value="1361" />
+    <option name="height" value="728" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ModeloTransporte" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ModeloTransporte" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ModeloTransporte" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ModeloTransporte" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ModeloTransporte" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ModeloTransporte" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="CostoMinimo" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Bitnami\wampstack-7.2.11-0\apache2\htdocs\ModeloTransporte\public" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",HTML5_OUTLINE_MODE,ALPHA_COMPARATOR,SHOW_FIELDS,HIDE_INHERITED_FROM_OBJECT" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="573e2388-a25d-4dd6-9247-50f4bcadfe9e" name="Default Changelist" comment="" />
+      <created>1556955229579</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1556955229579</updated>
+      <workItem from="1556955231025" duration="64842000" />
+      <workItem from="1557078360621" duration="63992000" />
+      <workItem from="1557230417248" duration="423000" />
+      <workItem from="1557239273627" duration="4809000" />
+      <workItem from="1557299148049" duration="39689000" />
+      <workItem from="1557413660767" duration="17064000" />
+      <workItem from="1557513844294" duration="31903000" />
+      <workItem from="1557664486482" duration="1279000" />
+      <workItem from="1557737729846" duration="13392000" />
+      <workItem from="1557813321481" duration="1174000" />
+      <workItem from="1558073734221" duration="1015000" />
+      <workItem from="1558076450796" duration="19000" />
+      <workItem from="1558266227114" duration="152000" />
+      <workItem from="1558272874377" duration="372000" />
+      <workItem from="1558983693117" duration="130000" />
+      <workItem from="1559491808747" duration="105000" />
+      <workItem from="1559491974131" duration="1839000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="242199000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="12" y="25" width="1361" height="728" extended-state="1" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.47474748" visible="true" weight="0.29931456" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.5252525" side_tool="true" visible="true" weight="0.29931456" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.6529915" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.55711776" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32991454" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32864675" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" x="0" y="0" width="286" height="488" id="Documentation" order="3" side_tool="true" visible="true" weight="0.16372022" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public/materialize/js/materialize.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/hola.js" />
+    <entry file="file://$PROJECT_DIR$/js/perro.js" />
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.webworker.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="3014" column="24" lean-forward="true" selection-start-line="3014" selection-start-column="24" selection-end-line="3014" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rora.js" />
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="5125" column="12" lean-forward="true" selection-start-line="5125" selection-start-column="12" selection-end-line="5125" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/DibujarMatriz.js" />
+    <entry file="file://$PROJECT_DIR$/js/prueba1.js" />
+    <entry file="file://$PROJECT_DIR$/js/prueba2.js" />
+    <entry file="file://$PROJECT_DIR$/public/materialize/css/materialize.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="43504" selection-start-line="5" selection-start-column="43504" selection-end-line="5" selection-end-column="43504" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/alertifyjs/css/themes/default.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hola.html" />
+    <entry file="file://$PROJECT_DIR$/public/myStiyle.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hola.pug" />
+    <entry file="uml://JavaScript-modules-diagram/C:/Bitnami/wampstack-7.2.11-0/apache2/htdocs/ModeloTransporte/js/calcularMatrizFlujoEsquina.js">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/js/calcularMatrizFlujoEsquina.js</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="509.0" y="261.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/C:/Bitnami/wampstack-7.2.11-0/apache2/htdocs/ModeloTransporte/clases">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/clases</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="509.0" y="261.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/C:/Bitnami/wampstack-7.2.11-0/apache2/htdocs/ModeloTransporte/clases/Animal.js">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/clases/Animal.js</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="509.0" y="261.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/C:/Bitnami/wampstack-7.2.11-0/apache2/htdocs/ModeloTransporte/js/CostoMinimo">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/js/CostoMinimo</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="509.0" y="261.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/C:/Bitnami/wampstack-7.2.11-0/apache2/htdocs/ModeloTransporte/js/CostoMinimo/CostoMinimo.js">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/js/CostoMinimo/CostoMinimo.js</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="509.0" y="261.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clases/Animal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clases/Perro.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/aproximacionvoguel.js" />
+    <entry file="file://$PROJECT_DIR$/gato.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/esquinanoroeste.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="7" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aproximacionvoguel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2024">
+          <caret line="88" column="49" selection-start-line="88" selection-start-column="49" selection-end-line="88" selection-end-column="49" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/appEsquinaNoroeste.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2047">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/calcularMatrizFlujoEsquina.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6000">
+          <caret line="400" column="8" selection-start-line="400" selection-start-column="8" selection-end-line="403" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Voguel/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Voguel/AproximacionVoguel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5550">
+          <caret line="370" selection-start-line="370" selection-end-line="370" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minimocosto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="80" selection-start-line="79" selection-end-line="80" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Voguel/appAproximacionVoguel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/CostoMinimo/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/CostoMinimo/appCostoMinimo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/CostoMinimo/CostoMinimo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/CostoMinimo/MatrizCostoFlujo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

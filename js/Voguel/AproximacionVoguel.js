@@ -8,6 +8,8 @@ class AproximacionVoguel extends MatrizCostoFlujo{
         this.simboloGuion = '-';
         this.simboloQueSeaO = 'o';
 
+        this.arrayPenalizacionesFilaColumna = [];
+        this.arrayPenalizacionesFilaColumnaIndice = [];
     }
 
     resolverAproximacionDeVoguel(){
@@ -75,6 +77,12 @@ class AproximacionVoguel extends MatrizCostoFlujo{
         // let arraColumnaVirtual = this.obtenerCopyColumnaVirtual();
         let arrayFilaValorMasIndiceMasEsColumnaOFilaValor = [];
 
+        let arrayFilaPenalizaciones = [];
+        let arrayColumnaPenalizaciones = [];
+
+        let arrayIndiceFilaPenalizaciones = [];
+        let arrayIndiceColumnaPenalizaciones = [];
+
         for (let i = 0; i < this.filaNormal; i++) {
             let arrayFilaVirtual = this.obtenerCopyFilaVirtual(i);
 
@@ -84,12 +92,19 @@ class AproximacionVoguel extends MatrizCostoFlujo{
                 let valorRestaFila = this.obtenerRestaEncontrandoDosMenoresVirtual(arrayFilaVirtual, arrayFilaCostos);
                 let arrayAux = [];
                 arrayAux.push(valorRestaFila);
+
+                arrayFilaPenalizaciones.push(valorRestaFila);
+                arrayIndiceFilaPenalizaciones.push(i);
+
+                // this.arrayPenalizaciones.push(valorRestaFila);
                 arrayAux.push(i);
                 arrayAux.push(0);
                 arrayFilaValorMasIndiceMasEsColumnaOFilaValor.push(arrayAux.slice());
             }
 
         }
+
+        // arrayFilaPenalizaciones.push();
 
         for (let j = 0; j < this.columnaNormal; j++) {
             let arrayColumnaVirtual = this.obtenerCopyColumnaVirtual(j);
@@ -100,11 +115,29 @@ class AproximacionVoguel extends MatrizCostoFlujo{
                 let valorRestaColumna = this.obtenerRestaEncontrandoDosMenoresVirtual(arrayColumnaVirtual, arrayColumnaCostos);
                 let arrayAux = [];
                 arrayAux.push(valorRestaColumna);
+
+                arrayColumnaPenalizaciones.push(valorRestaColumna);
+                arrayIndiceColumnaPenalizaciones.push(j);
+
                 arrayAux.push(j);
                 arrayAux.push(1);
                 arrayFilaValorMasIndiceMasEsColumnaOFilaValor.push(arrayAux.slice());
             }
         }
+
+
+        let arrayUnionTempPenalizacionesFilaColumna = [];
+        let arrayUnionTempPenalizacionesFilaColumnaIndice = [];
+        // Envio las penalizaciones para mostrar
+        arrayUnionTempPenalizacionesFilaColumna.push(arrayFilaPenalizaciones);
+        arrayUnionTempPenalizacionesFilaColumna.push(arrayColumnaPenalizaciones);
+
+        arrayUnionTempPenalizacionesFilaColumnaIndice.push(arrayIndiceFilaPenalizaciones);
+        arrayUnionTempPenalizacionesFilaColumnaIndice.push(arrayIndiceColumnaPenalizaciones);
+
+        // Caputurando indice para penalizaciones
+        this.arrayPenalizacionesFilaColumna.push(arrayUnionTempPenalizacionesFilaColumna);
+        this.arrayPenalizacionesFilaColumnaIndice.push(arrayUnionTempPenalizacionesFilaColumnaIndice);
 
         console.log(arrayFilaValorMasIndiceMasEsColumnaOFilaValor);
 
@@ -115,6 +148,7 @@ class AproximacionVoguel extends MatrizCostoFlujo{
         if (esFilaOColumna === 0) {
 
             let indicefila = arrayMayor[1];
+            // Podria hacer algo
             let arrayVirtualFila = this.obtenerCopyFilaVirtual(indicefila);
             let arrayFilaCostos = this.obtenerCopyFilaCostos(indicefila);
             let indexColumnaEncontrada = this.encontraNumeroMenorDelArrayVirtualIndex(arrayVirtualFila, arrayFilaCostos);
@@ -327,5 +361,65 @@ class AproximacionVoguel extends MatrizCostoFlujo{
         }
 
     }
+
+    mostrarPenalizacionesTotal(elemento){
+        let cadenaConcat = "";
+        let contadorAux = 0;
+        let variableCadenaCambiante = "F";
+
+        for (let index = 0; index < this.arrayPenalizacionesFilaColumna.length; index++) {
+            cadenaConcat += "<tr>";
+            cadenaConcat += `<td>Penalizacion ${index+1} = Oferta: `;
+            for (let i = 0; i < this.arrayPenalizacionesFilaColumna[index].length; i++) {
+
+                for (let j = 0; j < this.arrayPenalizacionesFilaColumna[index][i].length; j++) {
+                    cadenaConcat += ` [ <a class='red-text'>${this.arrayPenalizacionesFilaColumna[index][i][j]}</a> ${variableCadenaCambiante}(${this.arrayPenalizacionesFilaColumnaIndice[index][i][j]+1})] `;
+                }
+                contadorAux++;
+
+                if (contadorAux === 1) {
+                    cadenaConcat += "Demanda: ";
+                    variableCadenaCambiante = "C";
+                }
+
+            }
+            contadorAux = 0;
+            variableCadenaCambiante = "F";
+
+            cadenaConcat += "</td>";
+            cadenaConcat += "</tr>";
+        }
+        elemento.innerHTML = cadenaConcat;
+    }
+
+    // saberTamanioColumna(index, i){
+    //     for (let helpIndex = 0; helpIndex < ){
+    //
+    //     }
+    // }
+
+    // mostrarPenalizacionesFilaFull(elemento){
+    //     let cadenaConcat = "";
+    //
+    //     for (let i = 0; i < this.arrayFilaPenalizaciones.length; i++) {
+    //         cadenaConcat += `<tr>
+    //                             <td>${i+1} -> ${this.arrayFilaPenalizaciones[i]}</td>
+    //                         </tr>`;
+    //     }
+    //
+    //     elemento.innerHTML = cadenaConcat;
+    // }
+    //
+    // mostrarPenalizacionesColumnaFull(elemento){
+    //     let cadenaConcat = "";
+    //     for (let j = 0; j < this.arrayColumnaPenalizaciones.length; j++) {
+    //         cadenaConcat += `<tr>
+    //                             <td>${j+1} -> ${this.arrayColumnaPenalizaciones[j]}</td>
+    //                          </tr>`;
+    //     }
+    //
+    //     elemento.innerHTML = cadenaConcat;
+    // }
+
 
 }

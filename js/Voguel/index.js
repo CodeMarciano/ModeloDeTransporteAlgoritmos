@@ -16,6 +16,9 @@ let auxMessageFicticio = document.getElementById('mensajeMatrizCostoFicticio');
 let auxResulVarTotal = document.getElementById('mostrarTotal');
 // let resultadoVariablesTotal = document.getElementById('mostrarTotal');
 
+// Mostrar Penalizaciones
+let mostrarPenalizacionesTotalParaIndexJS = document.getElementById('mostrarPenalizacionesTotal');
+
 
 function resetContenidoInput(items){
     for (el of items) {
@@ -56,6 +59,7 @@ function dibujarMatrizAPedirDatos(e){
             auxMessageFicticio.setAttribute('hidden', '');
             auxShowFiciticio.innerHTML = '';
             auxResulVarTotal.innerHTML = '';
+            mostrarPenalizacionesTotalParaIndexJS.innerHTML = '';
 
             let objetoMatrizCostos = new MatrizCostoFlujo(numberOrigen, numberDestino);
             objetoMatrizCostos.comenzarDibujarMatrizSinDatosInput(aniadirMatrizCostos);

@@ -51,6 +51,11 @@ function calcularResultadoCostoMinimoMostrar(e) {
     if (esIgualSumaOfertaDemanda) {
         alertify.success("Exito :)");
         // let arraySinFicticio = objetoCostoMinimo.getArrayACalcularCostos();
+        mensajeCostoFicticio.setAttribute('hidden', '');
+        mostrarMatrizCostoFicticio.innerHTML = '';
+        resultadoVariablesTotal.innerHTML = '';
+
+
         objetoCostoMinimo.resolverCostoMinimo();
 
         let matrizFlujo = objetoCostoMinimo.getMatrizFlujo();

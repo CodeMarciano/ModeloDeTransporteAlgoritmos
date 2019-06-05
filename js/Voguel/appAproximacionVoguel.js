@@ -9,7 +9,11 @@ let mensajeResultadoFlujo = document.getElementById('mensajeResultado');
 let mostrarMatrizCostoFicticio = document.getElementById('mostrarMatrizCostoConficticio');
 let mensajeCostoFicticio = document.getElementById('mensajeMatrizCostoFicticio');
 
+// Mostrar Penalizaciones
+// let mostraPenalizacionesFila = document.getElementById('mostrarPenalizacionesFila');
+// let mostrarPenalizaionesColumna = document.getElementById('mostrarPenalizacionesColumna');
 
+let mostrarPenalizacionesTotal = document.getElementById('mostrarPenalizacionesTotal');
 let resultadoVariablesTotal = document.getElementById('mostrarTotal');
 
 function extraerDatosInputsDeLaVistaArray(itemsTd) {
@@ -50,12 +54,19 @@ function calcularResultadoCostoMinimoMostrar(e) {
 
     if (esIgualSumaOfertaDemanda) {
         alertify.success("Exito :)");
+        mensajeCostoFicticio.setAttribute('hidden', '');
+        mostrarMatrizCostoFicticio.innerHTML = '';
+        resultadoVariablesTotal.innerHTML = '';
+        mostrarPenalizacionesTotal.innerHTML = '';
+
         objetoAproximacionVoguel.resolverAproximacionDeVoguel();
         
         let matrizFlujo = objetoAproximacionVoguel.getMatrizFlujo();
         objetoAproximacionVoguel.dibujarMatrizConDatosInput(mostrarResultadoFlujo, matrizFlujo);
         mensajeResultadoFlujo.removeAttribute('hidden');
         objetoAproximacionVoguel.comenzarDibujarTotalesResultadosVariables(resultadoVariablesTotal);
+
+        objetoAproximacionVoguel.mostrarPenalizacionesTotal(mostrarPenalizacionesTotal);
 
     } else {
 
@@ -75,6 +86,9 @@ function calcularResultadoCostoMinimoMostrar(e) {
 
                 mensajeResultadoFlujo.removeAttribute('hidden');
                 objetoAproximacionVoguel.comenzarDibujarTotalesResultadosVariables(resultadoVariablesTotal);
+
+
+                objetoAproximacionVoguel.mostrarPenalizacionesTotal(mostrarPenalizacionesTotal);
 
                 // console.log(arrayConFicticio);
             }
